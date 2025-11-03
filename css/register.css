@@ -1,0 +1,128 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0c10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #00ffff;
+  }
+
+  #register-form {
+    background: #121620;
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow:
+      0 0 20px #00f0ff,
+      0 0 40px #00aaff,
+      0 0 60px #005f9e;
+    width: 350px;
+    text-align: center;
+    position: relative;
+  }
+
+  #register-form h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00e5ff,
+      0 0 20px #00bfff;
+  }
+
+  #register-form input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    background: #0a1a2b;
+    color: #00e5ff;
+    box-shadow: inset 0 0 10px #0077cc;
+    transition: 0.3s ease;
+    outline: none;
+  }
+
+  #register-form input::placeholder {
+    color: #0099cc;
+    opacity: 0.7;
+  }
+
+  #register-form input:focus {
+    box-shadow:
+      0 0 8px #00ffff,
+      inset 0 0 15px #00aaff;
+    background: #021029;
+  }
+
+  #register-form button {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(45deg, #00ffff, #005f9e);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0b0c10;
+    cursor: pointer;
+    box-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #0099cc;
+    transition: all 0.3s ease;
+  }
+
+  #register-form button:hover {
+    background: linear-gradient(45deg, #005f9e, #00ffff);
+    box-shadow:
+      0 0 20px #00ffff,
+      0 0 30px #00aaff;
+    color: white;
+  }
+
+  #register-form::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 20px;
+    background: linear-gradient(270deg, #00ffff, #005f9e, #00ffff);
+    background-size: 600% 600%;
+    animation: glowing 10s linear infinite;
+    filter: blur(15px);
+    z-index: -1;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  
+.back-arrow {
+    position: absolute;
+    top: 15px;
+    right: 20px; /* מיקום בפינה ימין עליונה */
+    font-size: 1.8rem;
+    color: #00ffff;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #0099cc;
+}
+
+

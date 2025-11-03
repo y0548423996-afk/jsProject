@@ -1,0 +1,239 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+nav {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav h3 {
+  text-align: center;
+  font-size: 42px;
+  color: #00ffff;
+  margin: 20px 0;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #0088ff;
+  animation: shine 3s infinite;
+  background: linear-gradient(145deg, #1a1a1a, #000000);
+  border: 3px solid #00ffff55;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(0, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+nav h3::after {
+  content: '₪';
+  margin-left: 10px;
+  font-size: 36px;
+  color: #00ffff;
+}
+
+@keyframes shine {
+  0%, 100% {
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #0088ff;
+    border-color: #00ffff55;
+  }
+  50% {
+    text-shadow: 0 0 25px #00ffff, 0 0 50px #00ccff;
+    border-color: #00ffff88;
+  }
+}
+
+/* תיבת מוצר */
+div, aside {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background: linear-gradient(145deg, #1f1f1f, #000000);
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  padding: 25px;
+  margin: 15px 0;
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.15), 0 0 40px #009dff inset;
+  border-radius: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  gap: 25px;
+}
+
+div:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.5), 0 0 60px rgba(0, 150, 255, 0.4);
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 20px #00f7ff;
+  margin-left: 20px;
+  transition: transform 0.4s ease;
+}
+
+div:hover img {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 30px #00ffff66;
+}
+
+/* תיאור מוצר */
+p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 15px;
+  text-shadow: 0 0 5px #00ccff44;
+  transition: color 0.3s ease;
+}
+
+div:hover p {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff66;
+}
+
+/* כמות */
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 2px solid #00f7ff;
+  border-radius: 50px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px #00f7ff, 0 0 25px #009dff inset;
+  padding: 4px 8px;
+}
+
+/* כפתורים */
+.quantity button {
+  background: linear-gradient(45deg, #00f7ff, #009dff);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+.quantity button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00f7ff, 0 0 20px #009dff inset;
+}
+
+.input-box {
+  width: 55px;
+  text-align: center;
+  border: none;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent;
+  color: #00f7ff;
+  outline: none;
+  text-shadow: 0 0 8px #00f7ff;
+  height: 32px;
+}
+
+.input-box:focus {
+  background: rgba(0, 247, 255, 0.1);
+  box-shadow: inset 0 0 10px #00f7ff33;
+  border-radius: 8px;
+}
+
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-box[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* כפתור סיום */
+nav button {
+  width: 40%;
+  height: 55px;
+  background: linear-gradient(145deg, #1a1a1a, #000000);
+  color: #00ffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  border: 3px solid #00ffff66;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.5), 0 0 60px rgba(0, 150, 255, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+nav button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.8), 0 0 55px rgba(0, 200, 255, 0.7), 0 0 75px rgba(0, 150, 255, 0.6);
+  border-color: #00ffff;
+  color: #ffffff;
+  background: linear-gradient(145deg, #1f1f1f, #0a0a0a);
+}
+
+nav button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+  transition: all 0.6s;
+}
+
+nav button:hover::after {
+  left: 100%;
+}
+
+nav button:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+
+.moving-border-wrapper {
+  position: fixed; /* מיקום קבוע על המסך */
+  top: 20px;       /* ריווח מלמעלה */
+  right: 20px;     /* ריווח מהצד הימני */
+  z-index: 1000;   /* כדי להיות מעל כל התוכן */
+  cursor: pointer;
+}
+  /* אפשר לשמור גם את שאר הסגנונות הקיימים */
+h3 {
+  font-size: 5px;       /* גודל טקסט קטן יותר */
+  width: fit-content;    /* רוחב שמתאים לתוכן */
+  padding: 2px 5px;      /* ריווח פנימי קטן */
+  margin: 10px auto;     /* ממרכז אופקי (אוטומטית) וריווח אנכי */
+  line-height: 1.2;      /* גובה שורה קטן יותר */
+  text-align: center;    /* מיושר למרכז בתוך האלמנט */
+  display: block;        /* כדי ש-margin:auto יעבוד */
+}
+

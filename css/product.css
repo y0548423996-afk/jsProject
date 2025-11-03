@@ -1,0 +1,165 @@
+
+
+/* רקע כללי */
+
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* כותרת לעמוד */
+h1 {
+  text-align: center;
+  font-size: 48px;
+  color: #00ffff;
+  margin-top: 30px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff; }
+  50% { text-shadow: 0 0 25px #00ffff, 0 0 40px #00ccff; }
+}
+
+/* פריסת המוצרים */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+}
+
+/* כרטיס מוצר */
+section > div {
+  position: relative;
+  background: linear-gradient(145deg, #1f1f1f, #000000);
+  border: 1px solid #ffffff33;
+  color: white;
+  padding: 25px;
+  border-radius: 25px;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+section > div:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(0, 200, 255, 0.5),
+    0 0 60px rgba(0, 150, 255, 0.4);
+}
+
+/* תמונת מוצר */
+section > div img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 20px #00ffff33;
+}
+
+section > div:hover img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* טקסטים */
+section > div p {
+  margin: 15px 0;
+  font-size: 17px;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+/* כפתורים */
+section > div .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+section > div .button-container button {
+  width: 160px;
+  height: 45px;
+  background: linear-gradient(90deg, #00ccff, #0066ff);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ccffcc;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section > div .button-container button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.5s;
+}
+
+section > div .button-container button:hover::after {
+  left: 100%;
+}
+
+section > div .button-container button:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 25px #00ffff,
+    0 0 45px #00bfff,
+    0 0 65px #0099ff;
+}
+
+section > div .button-container button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 12px #00ccff;
+}
+
+
+
+
+/* עיצוב טקסטים בצבע תכלת זוהר אחיד */
+section div p,
+section div span,
+section div button,
+section div .moving-border-content {
+  color: #00ccff;
+  font-weight: 600;
+  /* text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #0080ff; */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.heart {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem; /* יותר קטן מ-1.5 */
+  margin-top: 5px;
+  padding: 0;
+}
+.heart i {
+  color: white; /* לבן כברירת מחדל */
+  transition: color 0.3s ease;
+}
+.heart.fav i {
+  color: red; /* כשהוא נלחץ – אדום */}

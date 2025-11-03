@@ -1,0 +1,113 @@
+
+
+/* עיצוב לכפתורים לכל הדפים */
+  
+.popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-box {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      border: 2px solid #fff;
+      text-align: center;
+      font-size: 1.8rem;
+      border-radius: 20px;
+      box-shadow:
+        0 0 6px #00ffff,
+        0 0 10px #33ccff,
+        0 0 14px #66ffff,
+        0 0 18px #99ffff;
+      max-width: 450px;
+    }
+
+    .popup-btn {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      background: #000;
+      border: 2px solid #00ffff;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow:
+        0 0 5px #00ffff,
+        0 0 8px #33ccff,
+        0 0 12px #66ffff,
+        0 0 15px #99ffff;
+      transition: all 0.3s ease;
+    }
+
+    .popup-btn:hover {
+      background: #00ffff;
+      color: #000;
+    }
+
+
+.moving-border-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 3px;
+  border: none;
+  position: relative;
+  background: #353535;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.moving-border-wrapper:hover {
+  background: #555555;
+}
+.moving-border-content {
+  position: relative;
+  background: #131313;
+  color: white;
+  display: inline-block;
+  padding: 10px 16px; /* היה 20px */
+  border-radius: 10px;
+  font-size: 15px;     /* היה 30px */
+  font-weight: 700;
+  display: flex;
+
+}
+.moving-border-mover {
+  display: block;
+  position: absolute;
+  width: calc(100% * 1.4);
+  height: calc(100% * 3.4);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: move 3s linear infinite;
+}
+
+.bg-3 {
+  background: conic-gradient(from 180deg at 50% 50%,#05ff2c 0deg,#10ffff 111.6deg,#fff0 228.75deg,rgba(42,138,246,0) 360deg);
+}
+.bg-4 {
+  background: conic-gradient(from 180deg at 50% 50%,#05ff2c 0deg,#10ffff 111.6deg,#fff0 228.75deg,rgba(42,138,246,0) 360deg);
+}
+.moving-border-wrapper:not(:last-child) {
+  margin-right: 12px;
+}
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+* {
+  font-family: Urbanist, sans-serif;
+}
